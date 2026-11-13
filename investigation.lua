@@ -82,11 +82,16 @@ local function login(victim, onLogin)
 
     local sendBtn = iup.button({title = "Confirmar"})
 
-    local hintsLabel = iup.label({title = [[
-        São 5 as partes da chave final. Encontre-as e obtenha acesso às evidências finais.
-    ]]})
+    local hintsLabel = iup.label({
+        title = [[
+            São 5 as partes da chave final. Encontre-as e obtenha acesso às evidências finais.
+        ]],
+        expand = "HORIZONTAL",
+        
+    })
     local hints = iup.vbox({
         gap = "5",
+        expand = "HORIZONTAL",
     })
 
     for i, hintTxt in ipairs(victim.Hints) do
@@ -99,14 +104,19 @@ local function login(victim, onLogin)
 
 
     local dlg = iup.dialog{
+
         iup.vbox{
             
             iup.frame{
                 iup.vbox{
                     hintsLabel,
                     hints,
+                    expand = "HORIZONTAL",
+                    gap = 5,
+                    margin = "8x8",
                 }
             },
+
             inputLabel,
             inputBox,
             outputLabel,
@@ -115,11 +125,16 @@ local function login(victim, onLogin)
 
             margin = "10x10",
             gap = "8",
-            expand = "HORIZONTAL"
+            expand = "HORIZONTAL",
+            alignment = "ACENTER"
             -- size = "150x"
         },
+
+        -- expand = "HORIZONTAL",
+        -- alignment = "ACENTER",
+
         title = "Investigação",
-        size = "350x"
+        size = "400x"
     }
 
     function sendBtn:action()
@@ -142,7 +157,7 @@ end
 
 local function showText()
 
-    iup.Message("Hello!", "gsa")
+    iup.Message("Sucesso!", "Arquivo verificado com sucesso; Fale com um monitor para obter acesso")
 
 end
 
