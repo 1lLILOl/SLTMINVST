@@ -4,7 +4,10 @@ local data = {
 
         --Lise
         {
-            Code = "MS8519",
+
+            Name = "Lise Meitner",
+            FirstCode = "4519",
+            SecondCode = "MS8519",
 
             Hints = {
 
@@ -32,7 +35,10 @@ local data = {
 
         --Franklin 
         {
-            Code = "CL9449",
+
+            Name = "Rosalind Franklin",
+            FirstCode = "6219",
+            SecondCode = "CL9449",
             
             Hints = {
 

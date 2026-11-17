@@ -5,13 +5,8 @@ package.path = projectPath .. "?.lua;"
 
 require("iuplua")
 require("iupluacontrols")
-require("data")
-require("utils")
-
-print(package.path)
-
-
-
+local data = require("data")
+local utils = require("utils")
 
 
 
@@ -23,12 +18,20 @@ end
 
 local function main()
 
-    local victim = utils:getVictim()
-    if not victim then print("drouga") return end
+    local function onVerify(victim)
+        showText(victim)
+    end
 
-    utils:verifyCode(victim, showText)
+    local function onGetVictim(victim)
+        
+        if not victim then print("drouga") return end
+
+        utils:verifyCode(victim, onVerify) 
+    end
+
+    utils:getVictim(onGetVictim)
+
     iup.MainLoop()
-
 end
 
 main()
