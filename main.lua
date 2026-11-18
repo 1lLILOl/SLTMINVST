@@ -12,7 +12,7 @@ local utils = require("utils")
 
 local function showText()
 
-    iup.Message("Sucesso!", "Arquivo verificado com sucesso; Fale com um monitor para obter acesso")
+    iup.Message("Código correto!!", "Fale com um monitor para obter as evidências")
 
 end
 
