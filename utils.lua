@@ -306,7 +306,7 @@ function utils:verifyCode(victim, onVerify)
 
         local passphrase = inputBox.value
 
-        if passphrase ~= correctPassphrase then
+        if passphrase:lower() ~= correctPassphrase:lower() then
             outputLabel.title = "Código incorreto"
             return
         end
